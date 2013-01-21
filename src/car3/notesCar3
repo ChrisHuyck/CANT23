@@ -1,0 +1,11 @@
+This is a combination of the IO from car2 (auto), and the learning mechanisms from
+som2.  
+
+So, let's start with an input net (neurons), som net (spont fatigue neurons), and
+an output net (spont fatigue neurons).  There is no internal support in input, 
+som (from som2) has 10.  From som2 input is connected to som with each neuron having
+20 random connections.  
+
+The question is what to do with output, including its
+internal support, and connections to and from som.  Let's start with 20% inhibitory
+neurons and 10 internal connections.  

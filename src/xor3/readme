@@ -1,0 +1,19 @@
+I developed this in eclipse, but was recently just doing it from the dos prompt.
+
+All the java files are included, and the .xml file.  No other files are needed.
+
+Compile it and run.  Output should come out to the dos window (eclipse console).
+
+It's set to run the standard 800 gas simulation.  
+
+If you want to change the size of the gas, change the rows or columns in xor3.xml.
+
+If you want to change so that it learns during testing (or spontaneous firing), 
+change learnWhileTesting in Xor3CANT.java.  
+
+If you want to have some spontaneous activation between training and testing, change
+the spontaneousOnlyCycles in Xor3CANT.java.  (Both this and learning during testing
+can be changed by changing the initial value at the top of the file.)
+
+You'll want to compile and run after the two variable changes, and I expect after the
+xml change.

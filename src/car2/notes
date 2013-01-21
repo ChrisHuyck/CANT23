@@ -1,0 +1,24 @@
+Copy the car files
+Change the learning so that at S > Sb we decorrelate.
+  This will require keeping track of the last x (we'll try 10) firings on
+    synapses.
+    
+    Ok, I played with this and it looks like I've got a good problem, and some
+    advancement.  The problem is that the system can store 10 sets of cars
+    more or less perfectly.  Increasing this to 20 leads to lots of errors.
+    These 20 add several that have four overlapping input features (of 6).
+    
+    The post-compensatory rule works relatively badly on this.  There's a slight
+    improvement if the anti mechanism is used.  As it now records the last 10 firings,
+    this anti-rule records reduces the strength of the uncofiring ones and the
+    those that don't cofire much, while increasing the ones that do.  I think
+    this opens up some space in the synaptic strength (because post-compensatory
+    is still running) so that some fractionation happens.  
+    
+    Some things change it.  How much to reduce or increase, gas size,
+    steps recorded, SB, but we always seem to get quite a few errors in
+    any runs of 20.    
+    
+    One way forward may be by trying to make all of the units have connections
+    that can be inhibitory or excitatory.  We could then relatively easily set
+    the amount of energy in the system.

@@ -1,0 +1,10 @@
+Can change the initial input by changing the testFlavor in MuddyNet.changePattern;
+
+Some of the neurons have both inhibitory and excitatory synapses.
+
+This doesn't take advantage of temporal variables.  So all three already 
+know q.
+
+Could set it up so the ground truth (e.g. p1 and p2 are dirty) could set
+off the appropriate variables (e.g. K1p2 K2p1 K3p1p2).
+

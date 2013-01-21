@@ -1,0 +1,183 @@
+<Nets>
+   <Net Name ="BaseNet" Cols ="30" Rows="10" Topology="1" 
+      activationThreshold="2.2"  axonalStrengthMedian="0.5" 
+      changeEachTime ="false"  compensatoryDivisor="1" learningOn="0" 
+      connectionStrength="0.02" connectivity="0.8"  decay="1.12" 
+      fatigueRate= "0.045" fatigueRecoveryRate="0.01" learningRate="0.01" 
+      likelihoodOfInhibitoryNeuron="0" neuronsFatigue="true" 
+      neuronsToStimulate="20" saturationBase="3"  
+      spontaneousActivationOn="false" cyclesPerRun="20" >
+	<Patterns>
+	  <Pattern Name="q3+p2+p3"  Number="0" >
+            <Rectangle StartIndex="90" EndIndex="94" />
+            <Rectangle StartIndex="120" EndIndex="124" />
+            <Rectangle StartIndex="180" EndIndex="184" />
+          </Pattern>
+	  <Pattern Name="q2-p2+p3"  Number="1" >
+            <Rectangle StartIndex="60" EndIndex="64" />
+            <Rectangle StartIndex="150" EndIndex="154" />
+            <Rectangle StartIndex="180" EndIndex="184" />
+          </Pattern>
+	  <Pattern Name="q2+p2-p3"  Number="2" >
+            <Rectangle StartIndex="60" EndIndex="64" />
+            <Rectangle StartIndex="120" EndIndex="124" />
+            <Rectangle StartIndex="210" EndIndex="214" />
+          </Pattern>
+	  <Pattern Name="q2+p2+p3"  Number="3" >
+            <Rectangle StartIndex="60" EndIndex="64" />
+            <Rectangle StartIndex="120" EndIndex="124" />
+            <Rectangle StartIndex="180" EndIndex="184" />
+          </Pattern>
+	  <Pattern Name="q1-p2-p3"  Number="4" >
+            <Rectangle StartIndex="30" EndIndex="34" />
+            <Rectangle StartIndex="150" EndIndex="154" />
+            <Rectangle StartIndex="210" EndIndex="214" />
+          </Pattern>
+	  <Pattern Name="q1+p2-p3"  Number="5" >
+            <Rectangle StartIndex="30" EndIndex="34" />
+            <Rectangle StartIndex="120" EndIndex="124" />
+            <Rectangle StartIndex="210" EndIndex="214" />
+          </Pattern>
+	  <Pattern Name="q1-p2+p3"  Number="6" >
+            <Rectangle StartIndex="30" EndIndex="34" />
+            <Rectangle StartIndex="150" EndIndex="154" />
+            <Rectangle StartIndex="180" EndIndex="184" />
+          </Pattern>
+	</Patterns>
+   </Net>
+      <Net Name ="Fact2Net" Cols ="30" Rows="10" Topology="1" 
+      activationThreshold="2.2"  axonalStrengthMedian="0.5" 
+      changeEachTime ="false"  compensatoryDivisor="1" learningOn="0" 
+      connectionStrength="0.02" connectivity="0.8"  decay="1.12" 
+      fatigueRate= "0.045" fatigueRecoveryRate="0.01" learningRate="0.01" 
+      likelihoodOfInhibitoryNeuron="0" neuronsFatigue="true" 
+      neuronsToStimulate="20" saturationBase="3"  
+      spontaneousActivationOn="false" cyclesPerRun="20" >
+	<Patterns>
+	  <Pattern Name="q3+p1+p3"  Number="0" >
+            <Rectangle StartIndex="90" EndIndex="94" />
+            <Rectangle StartIndex="120" EndIndex="124" />
+            <Rectangle StartIndex="180" EndIndex="184" />
+          </Pattern>
+	  <Pattern Name="q2-p1+p3"  Number="1" >
+            <Rectangle StartIndex="60" EndIndex="64" />
+            <Rectangle StartIndex="150" EndIndex="154" />
+            <Rectangle StartIndex="180" EndIndex="184" />
+          </Pattern>
+   	  <Pattern Name="q2+p1-p3"  Number="2" >
+            <Rectangle StartIndex="60" EndIndex="64" />
+            <Rectangle StartIndex="120" EndIndex="124" />
+            <Rectangle StartIndex="210" EndIndex="214" />
+          </Pattern>
+	  <Pattern Name="q2+p1+p3"  Number="3" >
+            <Rectangle StartIndex="60" EndIndex="64" />
+            <Rectangle StartIndex="120" EndIndex="124" />
+            <Rectangle StartIndex="180" EndIndex="184" />
+          </Pattern>
+	  <Pattern Name="q1+p1-p3"  Number="4" >
+            <Rectangle StartIndex="30" EndIndex="34" />
+            <Rectangle StartIndex="120" EndIndex="124" />
+            <Rectangle StartIndex="210" EndIndex="214" />
+          </Pattern>
+	  <Pattern Name="q1-p1-p3"  Number="5" >
+            <Rectangle StartIndex="30" EndIndex="34" />
+            <Rectangle StartIndex="150" EndIndex="154" />
+            <Rectangle StartIndex="210" EndIndex="214" />
+          </Pattern>
+	  <Pattern Name="q1-p1+p3"  Number="6" >
+            <Rectangle StartIndex="30" EndIndex="34" />
+            <Rectangle StartIndex="150" EndIndex="154" />
+            <Rectangle StartIndex="180" EndIndex="184" />
+          </Pattern>
+   	</Patterns>
+   </Net>
+      <Net Name ="Fact3Net" Cols ="30" Rows="10" Topology="1" 
+      activationThreshold="2.2"  axonalStrengthMedian="0.5" 
+      changeEachTime ="false"  compensatoryDivisor="1" learningOn="0" 
+      connectionStrength="0.02" connectivity="0.8"  decay="1.12" 
+      fatigueRate= "0.045" fatigueRecoveryRate="0.01" learningRate="0.01" 
+      likelihoodOfInhibitoryNeuron="0" neuronsFatigue="true" 
+      neuronsToStimulate="20" saturationBase="3"  
+      spontaneousActivationOn="false" cyclesPerRun="20" >
+	<Patterns>
+	  <Pattern Name="q3+p1+p2"  Number="0" >
+            <Rectangle StartIndex="90" EndIndex="94" />
+            <Rectangle StartIndex="120" EndIndex="124" />
+            <Rectangle StartIndex="180" EndIndex="184" />
+          </Pattern>
+	  <Pattern Name="q2-p1+p2"  Number="1" >
+            <Rectangle StartIndex="60" EndIndex="64" />
+            <Rectangle StartIndex="150" EndIndex="154" />
+            <Rectangle StartIndex="180" EndIndex="184" />
+          </Pattern>
+	  <Pattern Name="q2+p1-p2"  Number="2" >
+            <Rectangle StartIndex="60" EndIndex="64" />
+            <Rectangle StartIndex="120" EndIndex="124" />
+            <Rectangle StartIndex="210" EndIndex="214" />
+          </Pattern>
+	  <Pattern Name="q2+p1+p2"  Number="3" >
+            <Rectangle StartIndex="60" EndIndex="64" />
+            <Rectangle StartIndex="120" EndIndex="124" />
+            <Rectangle StartIndex="180" EndIndex="184" />
+          </Pattern>
+	  <Pattern Name="q1+p1-p2"  Number="4" >
+            <Rectangle StartIndex="30" EndIndex="34" />
+            <Rectangle StartIndex="120" EndIndex="124" />
+            <Rectangle StartIndex="210" EndIndex="214" />
+          </Pattern>
+	  <Pattern Name="q1-p1+p2"  Number="5" >
+            <Rectangle StartIndex="30" EndIndex="34" />
+            <Rectangle StartIndex="150" EndIndex="154" />
+            <Rectangle StartIndex="180" EndIndex="184" />
+          </Pattern>
+	  <Pattern Name="q1-p1-p2"  Number="6" >
+            <Rectangle StartIndex="30" EndIndex="34" />
+            <Rectangle StartIndex="150" EndIndex="154" />
+            <Rectangle StartIndex="210" EndIndex="214" />
+          </Pattern>
+   	</Patterns>
+   </Net>
+   <Net Name ="Rule1Net" Cols ="30" Rows="20" Topology="2" 
+      activationThreshold="2.2"  axonalStrengthMedian="0.5" 
+      changeEachTime ="false"  compensatoryDivisor="1" learningOn="0" 
+      connectionStrength="0.02" connectivity="0.8"  decay="1.12" 
+      fatigueRate= "0.045" fatigueRecoveryRate="0.01" learningRate="0.01" 
+      likelihoodOfInhibitoryNeuron="0" neuronsFatigue="true" 
+      neuronsToStimulate="5" saturationBase="4"  
+      spontaneousActivationOn="false" cyclesPerRun="20" >
+	<Patterns>
+	  <Pattern Name="One"  Number="1" >
+            <Rectangle StartIndex="0" EndIndex="5" />
+          </Pattern>
+	</Patterns>
+   </Net>
+   <Net Name ="Rule2Net" Cols ="30" Rows="20" Topology="2" 
+      activationThreshold="2.2"  axonalStrengthMedian="0.5" 
+      changeEachTime ="false"  compensatoryDivisor="1" learningOn="0" 
+      connectionStrength="0.02" connectivity="0.8"  decay="1.12" 
+      fatigueRate= "0.045" fatigueRecoveryRate="0.01" learningRate="0.01" 
+      likelihoodOfInhibitoryNeuron="0" neuronsFatigue="true" 
+      neuronsToStimulate="5" saturationBase="4"  
+      spontaneousActivationOn="false" cyclesPerRun="20" >
+	<Patterns>
+	  <Pattern Name="One"  Number="1" >
+            <Rectangle StartIndex="0" EndIndex="5" />
+          </Pattern>
+	</Patterns>
+	</Net>
+	<Net Name ="Rule3Net" Cols ="30" Rows="20" Topology="2" 
+      activationThreshold="2.2"  axonalStrengthMedian="0.5" 
+      changeEachTime ="false"  compensatoryDivisor="1" learningOn="0" 
+      connectionStrength="0.02" connectivity="0.8"  decay="1.12" 
+      fatigueRate= "0.045" fatigueRecoveryRate="0.01" learningRate="0.01" 
+      likelihoodOfInhibitoryNeuron="0" neuronsFatigue="true" 
+      neuronsToStimulate="5" saturationBase="4"  
+      spontaneousActivationOn="false" cyclesPerRun="20" >
+	<Patterns>
+	  <Pattern Name="One"  Number="1" >
+            <Rectangle StartIndex="0" EndIndex="5" />
+          </Pattern>
+	</Patterns>
+   </Net>
+ </Nets>
+

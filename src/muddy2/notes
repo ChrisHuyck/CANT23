@@ -1,0 +1,8 @@
+This involves the temporal variables.
+
+We add a timing net.  As the rules pop off on cycle 22, completing their work on cycle
+23, the timing net will have 50 cycles.  Unlike the existing rules (from MuddyCANT23),
+supported temporal rules will ignite on the 49th cycle with the effect from the 50th.
+
+I think it works now.  To test it on different configurations, MuddyNet.changePattern
+has to be modified.  Modify testFlavor.  The comments say which is which.

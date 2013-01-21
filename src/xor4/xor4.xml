@@ -1,0 +1,73 @@
+<Nets>
+   <Net Name ="BaseNet" Cols ="20" Rows="30" Topology="1" 
+      activationThreshold="2.2"  axonalStrengthMedian="0.5" 
+      changeEachTime ="false"  compensatoryDivisor="1" learningOn="2" 
+      connectionStrength="0.02" connectivity="0.8"  decay="1.12" 
+      fatigueRate= "0.045" fatigueRecoveryRate="0.01" learningRate="0.01" 
+      likelihoodOfInhibitoryNeuron="0" neuronsFatigue="true" 
+      neuronsToStimulate="0" saturationBase="4"  
+      spontaneousActivationOn="false" cyclesPerRun="20" >
+	<Patterns>
+	  <Pattern Name="One"  Number="1" >
+            <Rectangle StartIndex="0" EndIndex="199" />
+          </Pattern>
+	  <Pattern Name="Two"  Number="2" >
+            <Rectangle StartIndex="200" EndIndex="399" />
+          </Pattern>
+	  <Pattern Name="Three"  Number="3" >
+            <Rectangle StartIndex="400" EndIndex="599" />
+          </Pattern>
+	  <Pattern Name="Four"  Number="4" >
+            <Rectangle StartIndex="0" EndIndex="599" />
+          </Pattern>
+	  <Pattern Name="Five"  Number="5" >
+            <Rectangle StartIndex="0" EndIndex="399" />
+          </Pattern>
+	  <Pattern Name="Six"  Number="6" >
+            <Rectangle StartIndex="0" EndIndex="199" />
+            <Rectangle StartIndex="400" EndIndex="599" />
+          </Pattern>
+	</Patterns>
+   </Net>
+   <Net Name ="GasNet" Cols ="20" Rows="40" Topology="2" 
+      activationThreshold="2.2"  axonalStrengthMedian="0.5" 
+      changeEachTime ="false"  compensatoryDivisor="1" learningOn="3" 
+      connectionStrength="0.02" connectivity="0.8"  decay="1.12" 
+      fatigueRate= "0.045" fatigueRecoveryRate="0.01" learningRate="0.01" 
+      likelihoodOfInhibitoryNeuron="100" neuronsFatigue="true" 
+      neuronsToStimulate="0" saturationBase="4"  
+      spontaneousActivationOn="false" cyclesPerRun="20" >
+	<Patterns>
+	  <Pattern Name="One"  Number="1" >
+            <Rectangle StartIndex="0" EndIndex="199" />
+          </Pattern>
+	  <Pattern Name="Two"  Number="2" >
+            <Rectangle StartIndex="200" EndIndex="399" />
+          </Pattern>
+	  <Pattern Name="Three"  Number="3" >
+            <Rectangle StartIndex="200" EndIndex="399" />
+          </Pattern>
+	  <Pattern Name="Four"  Number="4" >
+            <Rectangle StartIndex="0" EndIndex="199" />
+          </Pattern>
+	</Patterns>
+   </Net>
+   <Net Name ="OutputNet" Cols ="20" Rows="20" Topology="3" 
+      activationThreshold="2.2"  axonalStrengthMedian="0.5" 
+      changeEachTime ="false"  compensatoryDivisor="1" learningOn="2" 
+      connectionStrength="0.02" connectivity="0.8"  decay="1.12" 
+      fatigueRate= "0.045" fatigueRecoveryRate="0.01" learningRate="0.01" 
+      likelihoodOfInhibitoryNeuron="60" neuronsFatigue="true" 
+      neuronsToStimulate="0" saturationBase="4"  
+      spontaneousActivationOn="false" cyclesPerRun="20" >
+	<Patterns>
+	  <Pattern Name="One"  Number="1" >
+            <Rectangle StartIndex="0" EndIndex="199" />
+          </Pattern>
+	  <Pattern Name="Two"  Number="2" >
+            <Rectangle StartIndex="200" EndIndex="399" />
+          </Pattern>
+	</Patterns>
+   </Net>
+</Nets>
+

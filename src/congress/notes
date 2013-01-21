@@ -1,0 +1,11 @@
+It was pretty straight forward to whack in the congress stuff.  I did it in an
+afternoon.  The results (training on train1 testing on train2) are about the
+results we got from the Neural Computing Applications paper.
+
+I'm not really sure where to go with this.  I could certainly write a conference
+paper on this (xor, car, congress).  I could also whack in some other types
+of features (integral, continuous).  I could look at extra levels, for example
+global inhibition.  I could look at CA persistence.  I could look at multiple
+level tasks like phoneme->word->sentence though this requires sequence.
+
+I could also clean up the patternReader so that it ran for both car and congress.

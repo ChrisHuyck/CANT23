@@ -1,0 +1,65 @@
+I'm going to try to duplicate a som with a CA net.  I'll make some simplifying 
+assumptions, but the key is going to be decorrelating CAs when they are too close.
+I'm going to try this by an activation curve.  Two CAs ignite and compete.  The loser
+gets pushed away by weakening the connections to the inputs. However, unlike a SOM,
+you can't move the connection.
+
+So, let's start out with inputs from X and Y.  There will be 100 discrete inputs
+in each.  In each training/testing instance, we'll only present 1 of each.  
+We'll make sure it only goes to three areas (rectangles) of the 2 dimensional
+input.  
+
+We'll start out with 10 CAs (A-J).  We'll give them big internal connections, and
+big external inhibition that are not plastic.  We'll also make sure that each neuron gets
+10 inputs from X and Y, each in its own 10 unit bin.
+
+I need compensatory learning so that the neurons can only have two inputs with
+significant value.    If I make all the CA neurons unplastic, and only learn
+the input-CA synapses, I shouldn't need anything more than compensatory to get
+the right behaviour.
+
+That may be a nice first step.
+-----------------------------------------------------------------
+However, when am I going to need anti-Hebbian?  When I want to fractionate a CA.
+You might want to do this when the CA is too big.  How do you do it?
+Ok, let's try the SOM above, see if I'm right, then try with looser or no
+initial boundaries for CAs. 
+---------------------------------
+Ok, to get the maths right.
+1. I've set it up so each Som neuron gets one input from each block of 10 inputs.
+2. Set it up so the Som neurons get a constant number of inputs from the Som net.
+3. Each neuron gets a preferred X and Y value.
+4. Set it up so that a Som CA ignites, runs for less than an epoch, and
+   fatigues out.  This seems pretty close.
+5. Now set it up so that each som goes to only one of the three rectangles.  Probably
+   by reducing SB.
+   currently it goes to one of the x,y coordinates, but not necessarily the rectangles,
+   though it tends toward them.  it also moves from them.
+   So, I've futzed around with SomNet weights and timing and it still moves.  I've
+   reset fatigue levels in Som after each epoch, and the same Som (1 for each category)
+   always wins.  Fatigue makes things move about.  
+   
+*************************************
+Ok, in some way it works.  Here are the caveats from above and reasons why.
+Firstly, note that Fc=.045 and Fr=0.01.  So, on average neurons want to fire every 1/4.5 
+cycles.  That's not quite right because of the non-linear increase in neurons that
+fire with fatigue quite negative.  Still, it's pretty close.  The system can't handle
+10 CAs, but gets better with 5.
+Second, even with 5 CAs, there is a problem.  Fatigue (with learning) leads to 
+de-correlation.  If there are 5 CAs, then fatigue will tend to increase.  This 
+leads to extra firing.  This means that eventually CAs will persist beyond the
+end of epoch, and change their association.  With 4 CAs, fatigue will tend to
+decrease, leading to CAs not being able to ignite. If there are three categories
+and 2 CAs are associated with one category, then the other 2 CAs associated with
+the other category will become fatigued.  Eventually, one of the CAs associated
+with the first category will ignite in response.
+Third, there is some play in all this.  Neurons can fire when other CAs are on.
+CAs can persist shorter (or not ignite fully) if they are fatigued.
+So, I fixed the whole thing by reducing learning rates every 5000 cycles.  It now
+settles into stable states.   
+**********************************
+Additionally, I did a bit of thinking.  I thought there were two types of energy in
+the system now, activation and fatigue.  Since firing caused by spontaneous activation
+leads to a non-linear increase in fatigue, the number firing without input should be <
+1/4.5 ~ .22.  If I do this (see data from spontFatigue.txt I get around .064, which confirms
+this. 

@@ -1,0 +1,66 @@
+Can the CAs emerge dynamically?
+Here I just remove the internal structure of the SOM.  I get correlations between
+the SOM nets over different runs. 
+
+I'm going to stick with the three inputs, and set up a pearsons test after training
+is over.   I did this after 20000 steps of training.  It does 6 presentations (2 of 
+each type presentation).  It then does a Pearson on 20 steps after start.  I take
+a positive Pearson as the two being the same, and a negative as them being 
+different. On a given net the best it can do is 3 the same and 12 different.
+On 100 nets it gets 269 correct sames, and 1196 correct differents. 
+
+
+I removed constraints in input->SOM, and got slightly better results.
+
+I added some internal (SOM) support help.  I put in some synapses and things got better.
+
+With 10 learnable synapses (SB=1), it gets every same correct (out of 282 runs).  Out
+of 1200 differents, it gets 1194.
+
+I'll now make it scalable, so that I can have a flexible number of inputs instead
+of 3.
+I run it with 5, and over 100, it averages 5/34 with a best 5/40.  Lots
+and possibly all of the bad differents are just low positive correlations. 
+It's possible that all decisions are correct.  Could code the decisions.
+
+I run it with 10, it averages 10/121 out of a possible 10/180.
+I put the decisions in and over 123 runs, it averaged 20 correct with 
+10 options.  That is, there were no mistakes. 
+
+So, we can manage with 10 CAs?
+
+Now, let's push it to see when it fails.  We could do this two ways. First, we could 
+expand the input net and try more inputs that don't share features.  Second,
+we could share features (e.g. 5,0 in addition to 0,0, and 5,5).
+
+I'm going to try to expand the input net first.
+Make input 10,40 instead of 10,20.  Change up input.
+With 20, it gets 39.98 decisions (out of 40) correct over 100, with 39.95 over 400. 
+
+Next I try overlapping inputs.  So, instead of (0,0),(1,1)..(19,19), 	I try
+(10,0),(11,1)..(19,9),(10,10)(11,11)..(19,19).  With this I get  39.54 out of 40 
+correct over 100.  
+
+Next I try doubly overlapping inputs.  So (0,0),(1,1)..(9,9),(9,0),(0,1),(1,2)..(8,9).
+With this I get 39.61 out of 40 correct over 100.
+
+If I try with even further overlap (0,0),(1,0)(2,0)(3,0) (4,1),(0,1)..(4,4) I get a 
+relatively big drop 33.9/40 for 100.  This is with 500 SOMnet neurons.
+With 1000 neurons it gets 32.9/40 for 50.
+Part of this may be fatigue in the input neurons during testing.  If I reset after each 
+test (fatigue and activation), I get 40/40 over 100 with 1000 somnet; 40/40 with 500 
+somnet.
+
+-----------------------General to do----------------
+Can we manage spreading out in the three areas?
+I think spontaneous firing input neurons helps.
+What about declining learning rate?
+It's not really linear input but discrete.  (x0 has nothing to do with x1).  
+Can I make it linear?
+
+---Note---
+I think I could put a reinforcement detector in that dynamically changed learning rate
+and I could link that (metaphorically at least) to a neuromodulator.
+---Summary----
+It looks like it works with a declining learning rate.  You need a reset during tests
+for highly redundant inputs.

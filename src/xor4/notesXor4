@@ -1,0 +1,53 @@
+I'm trying to do something with anti-Hebbian learning.  I've not got a lot of success,
+but there has been some progress.
+
+I've left the input and output nets as were (for xor3), but changed gas so that it
+uses antiHebbian.  Initially it had all internal connections as inhibitory, and
+all external (to output) as excitatory.  Neurons had both types of connections.
+
+If I separate the inhibitory gas connections so that they only go to other CAs
+and I specify 4 CAs, I get some reasonable behaviour.  That is these CAs seem
+to pop off.  
+
+They do move around, so that if the first gas CA is committed to EAB, it will then
+move to be committed to something else.  This gives me results like 73/27.
+
+This movement may have something to do with the post-compensatory learning from
+input.  As the weights are small (since there are only 10 in Gas), the
+weights to Gas from output change a lot.
+
+I'm going to try to add excitatory internal neurons. This gives a pretty broad
+range of results including 1 perfect.
+
+What if I connect the gas to the input?  That seems to have a similar result.
+
+NB that the AntiHebbian rule I'm using is inherently unstable.  If two neurons
+are decorrelated, the rule recorrelates them.  So, what is needed is a way to
+turn the antihebbian rule on and off.  I could use some reinforcement mechanism,
+but that wouldn't work for early sensory processing.  
+
+I'm going to try a form of global inhibition.  If too many neurons in the
+gasnet fire, I'll use antiHebbian learning.  Otherwise, I won't use it.
+One can imagine a neural mechanism to support this with neurotransmitters to
+signal learning.
+
+To some extent that works.  There are solid gas CAs that persist.  Unfortunately,
+they're associated with multiple input settings.
+
+Let's try to combine xor3 and xor4.  Let's have half inhibitory anti-Hebb neurons
+and half excitatory post-compensatory neurons.  The result is about the same. Around
+75% with one gas CA dominating.  If I drop from 300 to 100 inhib synapses I get around
+90%.  If I get rid of the CAs in gas, it gets better ~95%.
+
+When I go from 400 to 800 gas neurons it gets worse again.  It looks like there's too much
+activation in the net.  
+
+Perhaps 200 to trigger anti Hebbian instead of 100, with 800 neurons.  That helps, but it's 
+still around 85%  However almost all of the failures are 3s as yes instead of no.  
+
+Perhaps 25% antiHebb 25% compense inhib and 50% compense excite. That gets around 85 too.
+
+---------------------------------------------
+Let's take a step back.  To some degree, this fits in with SOMs.  A CA represents a 
+SOM unit.  The CAs need to move to the place of the inputs (slow dynamic), and then
+decorrelate locally.   I'm now going to try to explore in a new network called som. 

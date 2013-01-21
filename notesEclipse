@@ -1,0 +1,9 @@
+Every time I make a new CANT (e.g. MuddyCANT23) in eclipse, I have a CANT23 cannot be 
+resolved error.   This is fixed by adding the new folder to the Java Build path.  Then
+put the file in the default package (by clicking on the compiler error in the first 
+line of the file). Might also want to try
+properties run/debug settings and redoing the file that you've started, and refreshing.
+
+create the directory
+project properties build path add directory
+file new class 

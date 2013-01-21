@@ -1,0 +1,33 @@
+<Nets>
+   <Net Name ="BaseNet" Cols ="10" Rows="40" Topology="1" 
+      activationThreshold="2.2"  axonalStrengthMedian="0.5" 
+      changeEachTime ="false"  compensatoryDivisor="1" learningOn="2" 
+      connectionStrength="0.02" connectivity="0.8"  decay="1.12" 
+      fatigueRate= "0.045" fatigueRecoveryRate="0.01" learningRate="0.01" 
+      likelihoodOfInhibitoryNeuron="0" neuronsFatigue="true" 
+      neuronsToStimulate="20" saturationBase="5"  
+      spontaneousActivationOn="false" cyclesPerRun="75" >
+	<Patterns>
+	  <Pattern Name="One"  Number="1" >
+            <Rectangle StartIndex="0" EndIndex="0" />
+            <Rectangle StartIndex="100" EndIndex="100" />
+          </Pattern>
+	</Patterns>
+   </Net>
+   
+   <Net Name ="SomNet" Cols ="25" Rows="20" Topology="2" 
+      activationThreshold="2.2"  axonalStrengthMedian="0.5" 
+      changeEachTime ="false"  compensatoryDivisor="1" learningOn="2" 
+      connectionStrength="0.02" connectivity="0.8"  decay="1.12" 
+      fatigueRate= "0.045" fatigueRecoveryRate="0.01" learningRate="0.01" 
+      likelihoodOfInhibitoryNeuron="50" neuronsFatigue="true" 
+      neuronsToStimulate="0" saturationBase="1"  
+      spontaneousActivationOn="false" cyclesPerRun="75" >
+	<Patterns>
+	  <Pattern Name="One"  Number="1" >
+            <Rectangle StartIndex="0" EndIndex="199" />
+          </Pattern>
+	</Patterns>
+   </Net>
+</Nets>
+

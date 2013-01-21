@@ -1,0 +1,40 @@
+I did a quick translation for the Car data.  There are 6 input features with a total of
+21 features.  I made an input net of 30x21, and all 180 neurons are turned on each
+cycle.  The output net has 400 neurons for one feature with four possible values.
+I train once through or twice through.  I do it with a gas net of size 20x20,
+50x20, or 100x20 and each time get roughly 300-132 for a test on the 432 training
+data (~72%).
+
+I tried just four train/tests (3 0s 1 3), and it gets them all right. 20x20 gas
+These are all from the start of train1data.
+With 10 (6,1,1,2) it misses 1 for 600. 
+With 21 (13,4,2,2) it goes 450/130. (train for 17280 432*20*2)
+With 21 but 50x20 gas 450/75 (seed 2 450/107).  
+With 21 (13,4,2,2) it goes 450/117. (train for 25920 432*20*3)
+With 21 50x20 24920 450/124 (seed 2 450/118)
+With 10 (6,1,1,2) but test on 21 450/175
+If I train on 21, and test on 10 (20x20 17280) 450/133
+
+***************************
+Ok, I'm going to stop now.  I think what happens is that with
+10, relatively distinct, instances, 10 CAs can be learned.  
+However with 20 (or 452) all that is gotten is several
+less formed CAs.  In particular, during training on 20, many
+of the incorrect output neurons fire up.  This might
+be fixable by more neurons in some or all of the nets.
+It also might be aided by slower learning rates.  
+Those are good things to explore.  
+
+272/162 ~= 62%
+**************************************************
+----------------------
+Ideas tried in order.
+
+On the first tests about half the errors come from 2 and 3 igniting after not being
+on for a while;  try to reset after each test iteration.  Does seem to reduce those
+errors a bit, but mostly just increases 0.  Worse results. ~71% 0 always comes on.
+
+
+Try more input-> gas synapses.
+With 21 but 50x20 gas 450/75 10 synapses
+450/99 15 synapses
